@@ -136,3 +136,16 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
+
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Token': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization',
+            'description': "Paste token like: Token <your_token>",
+        }
+    },
+    'USE_SESSION_AUTH': False,  # Отключаем куки/сессию
+}
